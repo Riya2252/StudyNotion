@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -45,7 +45,7 @@ const VideoDetails = () => {
         setVideoEnded(false)
       }
     })()
-  }, [courseSectionData, courseEntireData, location.pathname])
+  }, [courseSectionData, courseEntireData, location.pathname, courseId, navigate, sectionId, subSectionId])
 
   // check if the lecture is the first video of the course
   const isFirstVideo = () => {

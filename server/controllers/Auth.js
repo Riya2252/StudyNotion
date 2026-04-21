@@ -95,7 +95,7 @@ exports.signup = async (req, res) => {
       accountType: accountType,
       approved: approved,
       additionalDetails: profileDetails._id,
-      image: "",
+      image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
     })
 
     return res.status(200).json({
@@ -202,14 +202,17 @@ exports.sendotp = async (req, res) => {
       lowerCaseAlphabets: false,
       specialChars: false,
     })
-    const result = await OTP.findOne({ otp: otp })
     console.log("Result is Generate OTP Func")
     console.log("OTP", otp)
+    let result = await OTP.findOne({ otp: otp })
     console.log("Result", result)
     while (result) {
       otp = otpGenerator.generate(6, {
         upperCaseAlphabets: false,
+        lowerCaseAlphabets: false,
+        specialChars: false,
       })
+      result = await OTP.findOne({ otp: otp })
     }
     const otpPayload = { email, otp }
     const otpBody = await OTP.create(otpPayload)
@@ -217,11 +220,10 @@ exports.sendotp = async (req, res) => {
     res.status(200).json({
       success: true,
       message: `OTP Sent Successfully`,
-      otp,
     })
   } catch (error) {
-    console.log(error.message)
-    return res.status(500).json({ success: false, error: error.message })
+    console.error("sendotp error:", error.message)
+    return res.status(500).json({ success: false, message: "Failed to send OTP. Please try again." })
   }
 }
 

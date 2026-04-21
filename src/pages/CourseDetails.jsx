@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { BiInfoCircle } from "react-icons/bi"
 import { HiOutlineGlobeAlt } from "react-icons/hi"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
@@ -62,7 +62,7 @@ function CourseDetails() {
     setIsActive(
       !isActive.includes(id)
         ? isActive.concat([id])
-        : isActive.filter((e) => e != id)
+        : isActive.filter((e) => e !== id)
     )
   }
 
@@ -88,7 +88,6 @@ function CourseDetails() {
   }
 
   const {
-    _id: course_id,
     courseName,
     courseDescription,
     thumbnail,

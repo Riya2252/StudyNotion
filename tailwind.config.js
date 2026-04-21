@@ -129,6 +129,44 @@ module.exports = {
         maxContent: "1260px",
         maxContentTab: "650px"
       },
+      backdropBlur: {
+        xs: "2px",
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-in-out",
+        "slide-up": "slideUp 0.5s ease-out",
+        "glow": "glow 2s ease-in-out infinite alternate",
+        "float": "float 3s ease-in-out infinite",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        glow: {
+          "0%": { boxShadow: "0 0 5px #FFD60A, 0 0 10px #FFD60A" },
+          "100%": { boxShadow: "0 0 20px #FFD60A, 0 0 40px #FFD60A44" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-gradient": "linear-gradient(135deg, #000814 0%, #0a0f1e 50%, #000814 100%)",
+        "card-gradient": "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
+      },
+      boxShadow: {
+        "glow-yellow": "0 0 20px rgba(255, 214, 10, 0.3)",
+        "glow-blue": "0 0 20px rgba(17, 138, 178, 0.3)",
+        "card": "0 8px 32px rgba(0, 0, 0, 0.3)",
+        "glass": "0 4px 30px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],

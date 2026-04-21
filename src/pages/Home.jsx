@@ -20,24 +20,30 @@ function Home() {
     <div>
       {/* Section 1 */}
       <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
-        {/* Become a Instructor Button */}
-        <Link to={"/signup"}>
-          <div className="group mx-auto mt-16 w-fit rounded-full bg-richblack-800 p-1 font-bold text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] transition-all duration-200 hover:scale-95 hover:drop-shadow-none">
-            <div className="flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900">
+
+        {/* Ambient background glow */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-yellow-50/5 blur-[120px]" />
+        <div className="pointer-events-none absolute top-20 left-10 h-[300px] w-[300px] rounded-full bg-blue-200/5 blur-[100px]" />
+
+        {/* Become an Instructor badge */}
+        <Link to={"/about"}>
+          <div className="group mx-auto mt-10 w-fit rounded-full border border-white/10 bg-white/5 p-[1px] backdrop-blur-sm transition-all duration-300 hover:border-yellow-50/30 hover:bg-white/8">
+            <div className="flex flex-row items-center gap-2 rounded-full px-8 py-2 text-sm font-semibold text-richblack-200 transition-all duration-200 group-hover:text-white">
+              <span className="h-2 w-2 rounded-full bg-yellow-50 animate-pulse" />
               <p>Become an Instructor</p>
-              <FaArrowRight />
+              <FaArrowRight className="transition-transform duration-200 group-hover:translate-x-1" />
             </div>
           </div>
         </Link>
 
         {/* Heading */}
-        <div className="text-center text-4xl font-semibold">
-          Empower Your Future with
+        <div className="text-center text-4xl font-bold leading-tight sm:text-5xl">
+          Empower Your Future with{" "}
           <HighlightText text={"Coding Skills"} />
         </div>
 
         {/* Sub Heading */}
-        <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
+        <div className="-mt-3 w-[85%] text-center text-base font-medium text-richblack-300 sm:text-lg">
           With our online coding courses, you can learn at your own pace, from
           anywhere in the world, and get access to a wealth of resources,
           including hands-on projects, quizzes, and personalized feedback from
@@ -45,19 +51,19 @@ function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-row gap-7">
-          <CTAButton active={true} linkto={"/signup"}>
+        <div className="mt-4 flex flex-row gap-4">
+          <CTAButton active={true} linkto={"/catalog/web-development"}>
             Learn More
           </CTAButton>
-          <CTAButton active={false} linkto={"/login"}>
+          <CTAButton active={false} linkto={"/contact"}>
             Book a Demo
           </CTAButton>
         </div>
 
         {/* Video */}
-        <div className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
+        <div className="mx-3 my-7 overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_60px_rgba(17,138,178,0.2)]">
           <video
-            className="shadow-[20px_20px_rgba(255,255,255)]"
+            className="w-full"
             muted
             loop
             autoPlay
@@ -82,12 +88,12 @@ function Home() {
             }
             ctabtn1={{
               btnText: "Try it Yourself",
-              link: "/signup",
+              link: "/catalog/web-development",
               active: true,
             }}
             ctabtn2={{
               btnText: "Learn More",
-              link: "/signup",
+              link: "/about",
               active: false,
             }}
             codeColor={"text-yellow-25"}
@@ -111,12 +117,12 @@ function Home() {
             }
             ctabtn1={{
               btnText: "Continue Lesson",
-              link: "/signup",
+              link: "/dashboard/enrolled-courses",
               active: true,
             }}
             ctabtn2={{
               btnText: "Learn More",
-              link: "/signup",
+              link: "/catalog/web-development",
               active: false,
             }}
             codeColor={"text-white"}
@@ -136,13 +142,13 @@ function Home() {
           <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
             <div className="lg:h-[150px]"></div>
             <div className="flex flex-row gap-7 text-white lg:mt-8">
-              <CTAButton active={true} linkto={"/signup"}>
+              <CTAButton active={true} linkto={"/catalog/web-development"}>
                 <div className="flex items-center gap-2">
                   Explore Full Catalog
                   <FaArrowRight />
                 </div>
               </CTAButton>
-              <CTAButton active={false} linkto={"/login"}>
+              <CTAButton active={false} linkto={"/about"}>
                 Learn More
               </CTAButton>
             </div>
@@ -162,7 +168,7 @@ function Home() {
                 be a competitive specialist requires more than professional
                 skills.
               </div>
-              <CTAButton active={true} linkto={"/signup"}>
+              <CTAButton active={true} linkto={"/about"}>
                 <div className="">Learn More</div>
               </CTAButton>
             </div>

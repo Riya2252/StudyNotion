@@ -1,4 +1,3 @@
-import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
 
@@ -9,48 +8,56 @@ import Logo from "../../assets/Logo/Logo-Full-Light.png";
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
+
+const Company = ["About", "Careers", "Affiliates", "Press", "Blog"];
+
 const Resources = [
   "Articles",
   "Blog",
-  "Chart Sheet",
-  "Code challenges",
+  "Cheat Sheet",
+  "Code Challenges",
   "Docs",
   "Projects",
   "Videos",
   "Workspaces",
+  "Guides",
+  "Tutorials",
 ];
-const Plans = ["Paid memberships", "For students", "Business solutions"];
-const Community = ["Forums", "Chapters", "Events"];
+
+const Plans = ["Paid Memberships", "For Students", "Business Solutions", "For Teams"];
+
+const Community = ["Forums", "Chapters", "Events", "Meetups", "Discord"];
 
 const Footer = () => {
   return (
-    <div className="bg-richblack-800">
+    <div className="bg-richblack-900 border-t border-white/5">
       <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-14">
-        <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-richblack-700">
+        <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-white/5">
           {/* Section 1 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
+          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-white/5 pl-3 lg:pr-5 gap-3">
             <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
               <img src={Logo} alt="" className="object-contain" />
               <h1 className="text-richblack-50 font-semibold text-[16px]">
                 Company
               </h1>
               <div className="flex flex-col gap-2">
-                {["About", "Careers", "Affiliates"].map((ele, i) => {
+                {Company.map((ele, i) => {
                   return (
                     <div
                       key={i}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.toLowerCase()}>{ele}</Link>
+                      <Link to={ele.split(" ").join("-").toLowerCase()}>{ele}</Link>
                     </div>
                   );
                 })}
               </div>
               <div className="flex gap-3 text-lg">
-                <FaFacebook />
-                <FaGoogle />
-                <FaTwitter />
-                <FaYoutube />
+                {[FaFacebook, FaGoogle, FaTwitter, FaYoutube].map((Icon, i) => (
+                  <div key={i} className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2 text-richblack-300 transition-all duration-200 hover:border-yellow-50/30 hover:bg-white/10 hover:text-white">
+                    <Icon />
+                  </div>
+                ))}
               </div>
               <div></div>
             </div>
@@ -172,7 +179,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="text-center">Made with ❤️ CodeHelp © 2023 Studynotion</div>
+          <div className="text-center text-richblack-400">Made with ❤️ by CodeHelp &nbsp;|&nbsp; © 2024 StudyNotion</div>
         </div>
       </div>
     </div>

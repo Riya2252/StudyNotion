@@ -212,7 +212,7 @@ details > summary::-webkit-details-marker {
 
 /* Buttons */
 .yellowButton {
-  @apply cursor-pointer rounded-md bg-yellow-50 px-[20px] py-[8px] font-semibold text-richblack-900;
+  @apply cursor-pointer rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-25 px-[20px] py-[8px] font-semibold text-richblack-900 transition-all duration-200 hover:scale-[1.02] hover:shadow-glow-yellow;
 }
 
 /* Swiper CSS Starts */
@@ -233,14 +233,53 @@ details > summary::-webkit-details-marker {
 /* Swiper CSS Ends */
 
 .blackButton {
-  @apply cursor-pointer rounded-md bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5;
+  @apply cursor-pointer rounded-lg border border-richblack-600 bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5 transition-all duration-200 hover:border-richblack-400 hover:bg-richblack-700 hover:scale-[1.02];
 }
 .lable-style {
   @apply text-[14px] text-richblack-5;
 }
 .form-style {
-  @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+  @apply rounded-xl bg-richblack-700/80 p-3 text-[16px] leading-[24px] text-richblack-5 border border-richblack-600 placeholder:text-richblack-400 focus:outline-none focus:border-yellow-50 focus:ring-1 focus:ring-yellow-50/30 transition-all duration-200 backdrop-blur-sm;
 }
 .section_heading {
   @apply text-2xl font-bold text-richblack-5 lg:text-4xl;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FFD60A 0%, #FF6B6B 50%, #4ECDC4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #1FA2FF 0%, #12D8FA 50%, #A6FFCB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect on hover */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 214, 10, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Modern gradient border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(#161D29, #161D29) padding-box,
+    linear-gradient(135deg, #FFD60A44, #ffffff22, #FFD60A44) border-box;
+  border: 1px solid transparent;
+  border-radius: 12px;
 }

@@ -1,10 +1,11 @@
-import React from 'react'
 import CTAButton from "../../../components/core/HomePage/Button";
 import { FaArrowRight } from "react-icons/fa";
 import Instructor from "../../../assets/Images/Instructor.png";
 import HighlightText from './HighlightText';
+import { useSelector } from "react-redux";
 
 const InstructorSection = () => {
+  const { token } = useSelector((state) => state.auth)
   return (
     <div>
         <div className="flex flex-col lg:flex-row gap-20 items-center">
@@ -28,7 +29,7 @@ const InstructorSection = () => {
             </p>
 
             <div className="w-fit">
-              <CTAButton active={true} linkto={"/signup"}>
+              <CTAButton active={true} linkto={token ? "/dashboard/my-profile" : "/signup"}>
                 <div className="flex items-center gap-3">
                   Start Teaching Today
                   <FaArrowRight />
