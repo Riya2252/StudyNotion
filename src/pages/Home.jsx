@@ -14,6 +14,7 @@ import HighlightText from "../components/core/HomePage/HighlightText"
 import InstructorSection from "../components/core/HomePage/InstructorSection"
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
 import TimelineSection from "../components/core/HomePage/TimelineSection"
+import Recommendations from "../components/core/HomePage/Recommendations"
 
 function Home() {
   return (
@@ -180,6 +181,11 @@ function Home() {
           {/* Learning Language Section - Section 3 */}
           <LearningLanguageSection />
         </div>
+      </div>
+
+      {/* Recommendations Section */}
+      <div className="bg-richblack-900">
+        <Recommendations />
       </div>
 
       {/* Section 3 */}
